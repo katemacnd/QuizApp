@@ -1,0 +1,40 @@
+* {
+    ;
+}
+
+.questionBox {
+    border-style: solid;
+    border-color: gray;
+    border-width: 3px;
+    align-items: center;
+    margin: 15%;
+}
+
+.question {
+    font-size: 18px;
+    text-align: center;
+    margin: 5%;
+}
+
+.options {
+    margin-left: 5%;
+}
+.questions {
+    display: flex;  
+    flex-direction: column;
+}
+
+.button {
+    margin: 2% 25%;
+}
+
+.stats {
+    text-align: center;
+    margin: 5%;
+}
+
+.logo {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
