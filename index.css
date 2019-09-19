@@ -2,12 +2,24 @@
     ;
 }
 
+.outerBox {
+    display: relative;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 15%;
+    background-image: url('http://www.exclusivelyhybrid.com/wp-content/uploads/2017/06/grass.jpg')
+}
+
 .questionBox {
     border-style: solid;
     border-color: gray;
     border-width: 3px;
+    border-radius: 5px;
     align-items: center;
-    margin: 15%;
+    margin: 5%;
+    background-color: lightgray;
 }
 
 .question {
@@ -25,16 +37,20 @@
 }
 
 .button {
-    margin: 2% 25%;
+    margin: 0 25%;
 }
 
 .stats {
-    text-align: center;
+    display: flex;
     margin: 5%;
 }
 
-.logo {
+.stats div {
+    width: 50%;
+}
+
+.grass {
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     right: 10px;
 }
