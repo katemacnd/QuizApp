@@ -1,5 +1,10 @@
 * {
-    ;
+    font-family: 'Architects Daughter';
+    background-color: lightgrey;
+}
+
+h1 {
+    text-align: center;
 }
 
 .outerBox {
@@ -8,8 +13,8 @@
     border-color: lightgrey;
     border-width: 2px;
     border-radius: 5px;
-    margin: 15%;
-    background-image: url('http://www.exclusivelyhybrid.com/wp-content/uploads/2017/06/grass.jpg')
+    margin: 0 15% 15% 15%;
+    background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg')
 }
 
 .questionBox {
@@ -19,7 +24,7 @@
     border-radius: 5px;
     align-items: center;
     margin: 5%;
-    background-color: lightgray;
+    background-color: lightgrey;
 }
 
 .question {
@@ -49,7 +54,7 @@
     width: 50%;
 }
 
-.grass {
+.logo {
     position: absolute;
     bottom: 0px;
     right: 10px;
