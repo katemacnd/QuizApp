@@ -8,29 +8,59 @@ h1 {
 }
 
 .outerBox {
-    display: relative;
+    width: 400px;
+    height: 300px;
     border-style: solid;
     border-color: lightgrey;
     border-width: 2px;
     border-radius: 5px;
-    margin: 0 15% 15% 15%;
+    margin: auto;
     background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg')
 }
 
-.questionBox {
+.innerBox {
     border-style: solid;
     border-color: gray;
     border-width: 3px;
     border-radius: 5px;
     align-items: center;
     margin: 5%;
+    width: 350px;
+    height: 250px;
     background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+
+.results {
+    display: relative;
+    border-color: solid;
+    border-width: 2px;
+    border-color: lightgrey;
+    text-align: center;
+    font-size: 30px;
+}
+
+.correct {
+    display: relative;
+    border: solid 2px lightgrey;
+    text-align: center;
+    max-height: 150px;
+}
+
+.start {
+    display: relative;
+    border-color: solid;
+    border-width: 2px;
+    border-color: lightgrey;
+    width: 350px;
+    height: 250px;
+    font-size: 36px;
 }
 
 .question {
     font-size: 18px;
     text-align: center;
-    margin: 5%;
 }
 
 .options {
@@ -41,21 +71,75 @@ h1 {
     flex-direction: column;
 }
 
-.button {
+.submit {
     margin: 0 25%;
+    font-size: 20px;
+    border: solid 2px green;
+}
+
+.restart {
+    margin: auto;
+    font-size: 18px;
+    border: solid 2px green;
+    text-align: center;
+    width: 75%;
+    height: 50%;
 }
 
 .stats {
     display: flex;
-    margin: 5%;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
 }
 
-.stats div {
-    width: 50%;
+.nextButton {
+    width: 350px;
+    margin: auto;
+}
+.next {
+    font-size: 18px;
+    border: solid 2px green;
+    width: 100%;
 }
 
 .logo {
     position: absolute;
     bottom: 0px;
     right: 10px;
+    width: 15%;
 }
+
+
+
+////// Media Queries
+
+/* @media only screen and (max-width: 600px) {
+    .logo {
+        
+    }
+  } 
+
+@media only screen and (min-width: 600px) {
+    .logo {
+
+    }
+  }
+
+@media only screen and (min-width: 768px) {
+    body {
+
+    }
+  }
+
+@media only screen and (min-width: 992px) {
+    body {
+
+    }
+  }
+
+@media only screen and (min-width: 1200px) {
+    body {
+
+    }
+  } */
