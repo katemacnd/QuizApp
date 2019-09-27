@@ -13,25 +13,30 @@
                    <br><img class = "correct" src='https://github.com/katemacnd/QuizApp/blob/master/images/correct.jpg?raw=true'>
                </div>  -->
                 <button class = "start">START</button>
-                <!-- <form class = "questions"> 
-                    <div class = 'question'>
-                        <h2>Q#: Example Question</h2></div>
-                    <div><input class = "options" type="radio">A</div>
-                    <div><input class = "options" type="radio">B</div>
-                    <div><input class = "options" type="radio">C</div>
-                    <div><input class = "options" type="radio">D</div>
-                    <input class = "button" type="submit" value = "Submit">
-                </form> -->
+                    <form class = "question hidden">
+                    <div id ="quiz">
+                        <h2>Q#: Example Question</h2></legend>
+                        <div class="buttons">
+                                <button id="btn0" type="radio"><span id="choice0">A</span></button>
+                                <button id="btn1"><span id="choice1">B</span></button>
+                                <button id="btn2"><span id="choice2">C</span></button>
+                                <button id="btn3"><span id="choice3">D</span></button>
+                        </div>
+                        <input class = "button" type="submit" value = "Submit">
+                    </div>
+                </form>
                 <!-- <button class = 'restart'>RESTART</button> -->
-                <!-- <div class = 'stats'>
+                <div class = 'stats hidden'>
                     <div class = 'score'>Score: 0 </div>
                     <div class = 'questionCount'>Question: 0/10</div>
-                </div>  -->
+                </div>
             </div>
         </div>  
         <!-- <div class = 'nextButton'>
             <button class = 'next'>NEXT</button> -->
         </div>
         <img class = "logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpts2DAQ1w1hUpk9KTbFKkg-NI7vNxiF2Hjmt72AfOjo5KpQ15vQ'>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src= 'index.js'></script>
     </body>
 </html>

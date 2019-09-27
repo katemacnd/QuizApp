@@ -32,6 +32,11 @@ h1 {
     flex-direction: column;
 }
 
+.answers{
+    display: flex;
+    flex-direction: column;
+}
+
 .results {
     display: relative;
     border-color: solid;
@@ -110,9 +115,13 @@ h1 {
     width: 15%;
 }
 
+.hidden {
+    display: none;
+}
 
 
-////// Media Queries
+
+/* Media Queries
 
 /* @media only screen and (max-width: 600px) {
     .logo {
