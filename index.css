@@ -15,7 +15,9 @@ h1 {
     border-width: 2px;
     border-radius: 5px;
     margin: auto;
-    background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg')
+    background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .innerBox {
@@ -71,7 +73,7 @@ h1 {
 .options {
     margin-left: 5%;
 }
-.questions {
+.buttons {
     display: flex;  
     flex-direction: column;
 }
@@ -79,13 +81,13 @@ h1 {
 .submit {
     margin: 0 25%;
     font-size: 20px;
-    border: solid 2px green;
+    border: solid 1px green;
 }
 
 .restart {
     margin: auto;
     font-size: 18px;
-    border: solid 2px green;
+    border: solid 1px green;
     text-align: center;
     width: 75%;
     height: 50%;
@@ -94,18 +96,19 @@ h1 {
 .stats {
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 95%;
     justify-content: space-around;
 }
+
 
 .nextButton {
     width: 350px;
     margin: auto;
 }
 .next {
-    font-size: 18px;
-    border: solid 2px green;
-    width: 100%;
+    margin: 0 25%;
+    font-size: 20px;
+    border: solid 1px green;
 }
 
 .logo {

@@ -1,45 +1,74 @@
-//quiz questions, options, correct responses
-
+    //quiz questions, options, correct responses
 let LIST = [
     {
-        question: 'What is a "Cria"?"',
+        question: 'What is a "Cria"?',
         answers: ['Baby Alpaca', 'Cream-Colored Alpaca', 'Specific Breed of Alpaca','An Alpaca Halter'],
         correctAnswer: 'Baby Alpaca',
         explanation: 'Latin.'
     }
 ]
-    //setting up scoring
-    //clicking start
 
-    function clickStart() {
-        $('.start').on('click', function() {
-            $('.start').hide();
-            // $('.question').show();
-            $('.stats').show();
-            $('.choiceDisplay').empty();
-            });
-    };
+//targetting the actual question, answers, correctAnswer, and explanation //
 
+    //question
+let questionText = Object.values(LIST[0]);
+
+    //answers
+let questionAllAnswers = Object.values(LIST[0]);
+let questionAnswers = questionAllAnswers[1];
+
+    //correct answers
+let correctAnswers = Object.values(LIST[0]);
+console.log(correctAnswers[2]);
+
+    //explanation
+let answerExplanation = Object.values(LIST[0]);
+console.log(answerExplanation[3]);
+
+$('.displayQuestion').text(questionText[0])
+$('#label0').text(questionAnswers[0])
+$('#label1').text(questionAnswers[1])
+$('#label2').text(questionAnswers[2])
+$('#label3').text(questionAnswers[3])
+
+//clicking start
+
+function clickStart() {
+    $('.start').on('click', function() {
+        $('.start').hide();
+        $('.stats').show();
+        $('.question').show();
+    });
+};
+
+//click submit
+
+function clickSubmit() {
+    $('.submit').on('click', function() {
+        event.preventDefault();
+        $('.question').hide();
+        $('.next').show();
+        $('.results').show();
+    });
+};
+
+//click next
+
+function clickNext() {
+$('.next').on('click', function() {
+    $('.next').hide();
+    $('.stats').show();
+    $('.question').show();
+    $('.next').hide();
+    $('.results').hide();
+});
+};
     //populating the choices
-
-    function quizQuestions() {
-        console.log('populating quiz questions')
-        $(".choiceDisplay").show();
-            console.log($('.choiceDisplay'));
-          $(".choiceDisplay").append('hello!');
-            console.log($('.choiceDispay'));
-            `<form>
-              <label>
-                <input type="radio" value="${LIST[0[0]]}" name="answers" required>${LIST[0[0]]}</input><br></br>
-              </label>
-
-              <button type="submit" class="submitButton">Submit Answer</button>
-          </form>`
-      }
 
         // clicking an answer
         // clicking submit
         // determine if answer correct/incorrect
+        //setting up scoring
 
     //functions related to quiz results
         //hide questions, answer options, submit button,
@@ -63,5 +92,6 @@ let LIST = [
         //RESTART
     // var quiz = new Quiz(questions);
 
-    clickStart();
-
+clickStart();
+clickSubmit();
+clickNext();
