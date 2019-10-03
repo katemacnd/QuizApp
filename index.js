@@ -8,14 +8,18 @@ let LIST = [
     }
 ]
 
-//targetting the actual question, answers, correctAnswer, and explanation //
+let totalScore = 0;
+let questionCount = 1;
 
+//targetting the actual question, answers, correctAnswer, and explanation //
     //question
 let questionText = Object.values(LIST[0]);
+console.log(questionText);
 
     //answers
 let questionAllAnswers = Object.values(LIST[0]);
 let questionAnswers = questionAllAnswers[1];
+console.log(questionAnswers);
 
     //correct answers
 let correctAnswers = Object.values(LIST[0]);
@@ -38,6 +42,7 @@ function clickStart() {
         $('.start').hide();
         $('.stats').show();
         $('.question').show();
+        $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
     });
 };
 
@@ -49,33 +54,48 @@ function clickSubmit() {
         $('.question').hide();
         $('.next').show();
         $('.results').show();
+        $('.explanation').show();
+        console.log(answerExplanation[3]);
     });
 };
 
 //click next
 
 function clickNext() {
-$('.next').on('click', function() {
-    $('.next').hide();
-    $('.stats').show();
-    $('.question').show();
-    $('.next').hide();
-    $('.results').hide();
-});
+    $('.next').on('click', function() {
+        $('.next').hide();
+        $('.stats').show();
+        $('.question').show();
+        $('.next').hide();
+        $('.results').hide();
+        questionCount ++;
+        $('.questionAnnouncement').text("Question: " + questionCount + "/10").show()
+    });
 };
-    //populating the choices
 
-        // clicking an answer
-        // clicking submit
-        // determine if answer correct/incorrect
-        //setting up scoring
+//click restart
 
-    //functions related to quiz results
+function clickRestart() {
+    $('.restart').on('click', function() {
+            $('.next').hide();
+            $('.start').show();
+            $('.restart').hide();
+        });
+    };
+
+// function determining if correct/incorrect
+// function adding to score if correct 
+
+function scoreKeeper(totalScore) {        
+    totalScore + 1;
+    return totalScore
+}
+
+    //functions related to quiz final results
         //hide questions, answer options, submit button,
-        //display image/result (based on correct/incorrect answer), correct answer, NEXT button
-        //updating score
+        //display image/result (based on correct/incorrect answer), explanation
+        //loop updating score
         //updating question count
-        //clicking NEXT button
 
     // functions related to quiz questions (con't)
         //update / display stats
@@ -84,14 +104,14 @@ $('.next').on('click', function() {
     //functions related to quiz end
         //display final score
         //clicking RESTART
+        //restarting score & question #s
 
     // click listeners
-        //START
-        //SUBMIT
-        //NEXT
         //RESTART
-    // var quiz = new Quiz(questions);
+
 
 clickStart();
 clickSubmit();
 clickNext();
+clickRestart();
+scoreKeeper();

@@ -15,16 +15,16 @@
                         <h2 class = displayQuestion></h2></legend>
                         <div class="buttons">
                             <div class = "allButtons">
-                                <input id="btn0" type="radio"></input>
+                                <input id="btn0" type="radio" name="selection"></input>
                                 <label id="label0"></label>
                             </div><div class = "allButtons">
-                                <input id="btn1" type="radio"></input>
+                                <input id="btn1" type="radio" name="selection"></input>
                                 <label id="label1"></label>
                             </div><div class = "allButtons">
-                                <input id="btn2" type="radio"></input>
+                                <input id="btn2" type="radio" name="selection"></input>
                                 <label id="label2"></label>
                             </div><div class = "allButtons">
-                                <input id="btn3" type="radio"></input>
+                                <input id="btn3" type="radio" name="selection"></input>
                                 <label id="label3"></label>
                             </div>
                             <button class = "submit" type="button">Submit</button>
@@ -33,12 +33,13 @@
                 </form>
                <div class = "results hidden">CORRECT!
                    <br><img class = "correct" src='https://github.com/katemacnd/QuizApp/blob/master/images/correct.jpg?raw=true'>
+                   <br><div class = "explanation hidden">test</div>
                </div> 
                     <button class = "next hidden" type="button">Next</input>
                 <button class = 'restart hidden'>RESTART</button>
                 <div class = 'stats hidden'>
-                    <div class = 'score'>Score: 0 </div>
-                    <div class = 'questionCount'>Question: 0/10</div>
+                    <div class = 'score'>Score: 0</div>
+                    <div class = 'questionAnnouncement hidden'></div>
                 </div>
             </div>
         </div>  
