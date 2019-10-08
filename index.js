@@ -8,10 +8,28 @@ let LIST = [
     explanation: 'Latin.'
   },
   {
-    question: 'What is question 2?',
-    answers: ['ewf', 'ewg', 'fwef','wefew'],
-    correctAnswer: 'ewg',
-    explanation: 'Randomly true'
+    question: 'What do you call the mating calls of the alpaca?',
+    answers: ['Orgling', 'Gurgling', 'Yodling','Humming'],
+    correctAnswer: 'Orgling',
+    explanation: 'Yep it is disgusting, too'
+  },
+  {
+    question: 'How many toes do alpacas have on each foot?',
+    answers: ['None - They are Hooves', '5 in Front, 4 in Back', '3 in Front, 2 in Back','2'],
+    correctAnswer: '2',
+    explanation: 'Two - It is true!'
+  },
+  {
+    question: 'Which family do alpacas belong to?',
+    answers: ['Camelidae', 'Carnivora', 'Mustelidae','Usidae'],
+    correctAnswer: 'Camelidae',
+    explanation: 'They are directly related to camels'
+  },
+  {
+    question: 'Who originally domesticated alpacas roughly 6,000 years ago?',
+    answers: ['Incas', 'Mayas', 'Tibetans','Native Hawaiians'],
+    correctAnswer: 'Incas',
+    explanation: 'Peruvians are awesome'
   }
 ];
 let questionCount = 1;
@@ -19,8 +37,8 @@ let i = 0;
 let radioButtons = document.getElementsByName('selection');
 let correctAnswers = Object.values(LIST[i]);
 let correctAnswer = correctAnswers[2];
-let answerExplanation = Object.values(LIST[i]);
 let totalScore = 0;
+let correctStatus = false;
 
 //clicking start
 
@@ -34,7 +52,7 @@ function clickStart() {
       $('.stats').show();
       $('.question').show();
       questionChange();
-      $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
+      $('.questionAnnouncement').text("Question: " + questionCount + "/6").show();
   });
 }
 
@@ -86,6 +104,9 @@ function progressQuestion() {
   $('.question').hide();
   $('.next').show();
   $('.results').show();
+  let answerExplanations = Object.values(LIST[questionCount - 1]);
+  let answerExplanation = answerExplanations[3];
+  $('.explanation').text(answerExplanation);
   $('.explanation').show();
 }
 
@@ -96,6 +117,13 @@ function gradeAnswer() {
   let correctAnswer = correctAnswers[2];
   if (userAnswer === correctAnswer) {
     totalScore ++;
+    correctStatus = true;
+    $('.correct').show();
+    $('.result').text("Correct!");
+  } else {
+    correctStatus = false;
+    $('.incorrect').show();
+    $('.result').text("Incorrect!");
   }
   return $('.score').text("Total Score: " + (0+totalScore));
 }
@@ -109,6 +137,8 @@ function clickNext() {
     $('.question').show();
     $('.next').hide();
     $('.results').hide();
+      $('.correct').hide();
+      $('.incorrect').hide();
     questionCount ++;
     questionChange();
     $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
@@ -126,7 +156,6 @@ for (k = 0;k < radioButtons.length; k++) {
 // restart page
 function finalPage() {
   $('.question').hide();
-  $('.stats').hide();
   $('.restart').show();
 }
 
@@ -146,6 +175,3 @@ clickStart();
 clickSubmit();
 clickNext();
 clickRestart();
-
-// Still Needed //
-        // display image/result (based on correct/incorrect answer), explanation
