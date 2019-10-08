@@ -12,35 +12,24 @@ let LIST = [
         correctAnswer: 'ewg',
         explanation: 'Randomly true'
     }
-]
+];
 
 let totalScore = 0;
 let questionCount = 1;
-let i=0;
-
-
-
-    //correct answers
+let i = 0;
+let radioButtons = document.getElementsByName('selection');
 let correctAnswers = Object.values(LIST[i]);
-
-    //explanation
+let correctAnswer = correctAnswers[2];
 let answerExplanation = Object.values(LIST[i]);
 
-function questionChange() {
-  if (i < Object.values(LIST).length) {
-    let questionText = Object.values(LIST[i]);
-    $('.displayQuestion').text(questionText[0]);
-    let questionAllAnswers = Object.values(LIST[i]);
-    let questionAnswers = questionAllAnswers[1];
-    $('#label0').text(questionAnswers[0]);
-    $('#label1').text(questionAnswers[1]);
-    $('#label2').text(questionAnswers[2]);
-    $('#label3').text(questionAnswers[3])
-    i++;
-    console.log(i)
-  } else {
-    console.log('end')
-  }
+// score correct/incorrect
+function gradeAnswer() {
+  let test = $("input[name='selection']:checked").val();
+  console.log(correctAnswer);
+  console.log(test);
+  // if (answer === correctAnswer) {
+  //   totalScore ++;
+  // }
 }
 
 //clicking start
@@ -53,12 +42,44 @@ function clickStart() {
         $('.question').show();
         $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
     });
-};
+}
+
+function questionChange() {
+  if (i < Object.values(LIST).length) {
+    let questionText = Object.values(LIST[i]);
+    $('.displayQuestion').text(questionText[0]);
+    let questionAllAnswers = Object.values(LIST[i]);
+    let questionAnswers = questionAllAnswers[1];
+    $('#label0').text(questionAnswers[0]);
+    $('#label1').text(questionAnswers[1]);
+    $('#label2').text(questionAnswers[2]);
+    $('#label3').text(questionAnswers[3]);
+    $('#btn0').val(questionAnswers[0]);
+    $('#btn1').val(questionAnswers[1]);
+    $('#btn2').val(questionAnswers[2]);
+    $('#btn3').val(questionAnswers[3]);
+    i++;
+  } else {
+    finalPage();
+  }
+}
 
 //click submit
 
+function clickSubmit() {
+    $('.submit').on('click', function() {
+        event.preventDefault();
+        validateForm();
+        // if validateForm() {
+          // if answerCorrect() {
+            // progressQuestion()
+        //} else {}
+          //
+      //}
+    });
+}
+
 function validateForm() {
-        var radioButtons = document.getElementsByName('selection')
         var checkFound = false;
         for (var j=0; j < 4; j++) {
            if (radioButtons[j].checked == true) {
@@ -67,40 +88,48 @@ function validateForm() {
               }
            }
         if (checkFound != true) {
-           alert ("Please check at least one checkbox.");
-           return
+           alert ('Please check at least one checkbox.');
+           return;
         }
       }
 
-
-function clickSubmit() {
-    $('.submit').on('click', function() {
-        event.preventDefault();
-        validateForm();
-    });
-};
-
 function progressQuestion() {
+  gradeAnswer();
   $('.question').hide();
   $('.next').show();
   $('.results').show();
   $('.explanation').show();
-  console.log(answerExplanation[3])
 }
 
 //click next
 
 function clickNext() {
     $('.next').on('click', function() {
+        uncheckAll();
         $('.next').hide();
         $('.stats').show();
         $('.question').show();
         $('.next').hide();
         $('.results').hide();
         questionCount ++;
-        questionChange();;
-        $('.questionAnnouncement').text("Question: " + questionCount + "/10").show()
+        questionChange();
+        $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
     });
+}
+
+function uncheckAll() {
+for (k=0;k<radioButtons.length;k++) {
+    if (radioButtons[k].type == 'radio') {
+    radioButtons[k].checked = false;
+  }}
+}
+
+function finalPage() {
+    console.log('end');
+    $('.question').hide();
+    $('.restart').show();
+    //restart question counter
+    //restart score
 }
 
 //click restart
@@ -109,41 +138,25 @@ function clickRestart() {
     $('.restart').on('click', function() {
             $('.next').hide();
             $('.start').show();
-            $('.restart').hide()
+            $('.restart').hide();
         });
     }
 
-// function determining if correct/incorrect
-// function adding to score if correct
-
 function scoreKeeper(totalScore) {
-    totalScore + 1;
-    return totalScore
+    totalScore ++;
+    return totalScore;
 }
-
-
-
-    //functions related to quiz final results
-        //hide questions, answer options, submit button,
-        //display image/result (based on correct/incorrect answer), explanation
-        //loop updating score
-        //updating question count
-
-    // functions related to quiz questions (con't)
-        //update / display stats
-        //change questions/answers
-
-    //functions related to quiz end
-        //display final score
-        //clicking RESTART
-        //restarting score & question #s
-
-    // click listeners
-        //RESTART
-
 
 clickStart();
 clickSubmit();
 clickNext();
 clickRestart();
 scoreKeeper();
+
+
+// Still Needed //
+
+        // loop updating score
+        // display image/result (based on correct/incorrect answer), explanation
+        // function determining if correct/incorrect
+        // function adding to score if correct
