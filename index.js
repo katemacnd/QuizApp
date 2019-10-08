@@ -1,47 +1,41 @@
-    //quiz questions, options, correct responses
-let LIST = [
-    {
-        question: 'What is a "Cria"?',
-        answers: ['Baby Alpaca', 'Cream-Colored Alpaca', 'Specific Breed of Alpaca','An Alpaca Halter'],
-        correctAnswer: 'Baby Alpaca',
-        explanation: 'Latin.'
-    },
-    {
-        question: 'What is question 2?',
-        answers: ['ewf', 'ewg', 'fwef','wefew'],
-        correctAnswer: 'ewg',
-        explanation: 'Randomly true'
-    }
-];
+/*jshint esversion: 6 */
 
-let totalScore = 0;
+let LIST = [
+  {
+    question: 'What is a "Cria"?',
+    answers: ['Baby Alpaca', 'Cream-Colored Alpaca', 'Specific Breed of Alpaca','An Alpaca Halter'],
+    correctAnswer: 'Baby Alpaca',
+    explanation: 'Latin.'
+  },
+  {
+    question: 'What is question 2?',
+    answers: ['ewf', 'ewg', 'fwef','wefew'],
+    correctAnswer: 'ewg',
+    explanation: 'Randomly true'
+  }
+];
 let questionCount = 1;
 let i = 0;
 let radioButtons = document.getElementsByName('selection');
 let correctAnswers = Object.values(LIST[i]);
 let correctAnswer = correctAnswers[2];
 let answerExplanation = Object.values(LIST[i]);
-
-// score correct/incorrect
-function gradeAnswer() {
-  let test = $("input[name='selection']:checked").val();
-  console.log(correctAnswer);
-  console.log(test);
-  // if (answer === correctAnswer) {
-  //   totalScore ++;
-  // }
-}
+let totalScore = 0;
 
 //clicking start
 
 function clickStart() {
-    $('.start').on('click', function() {
-        $('.start').hide();
-        $('.stats').show();
-        questionChange();
-        $('.question').show();
-        $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
-    });
+  $('.start').on('click', function() {
+      $('.start').hide();
+      $('.stats').html(`
+        <div class = 'score'></div>
+        <div class = 'questionAnnouncement hidden'></div>
+      `);
+      $('.stats').show();
+      $('.question').show();
+      questionChange();
+      $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
+  });
 }
 
 function questionChange() {
@@ -65,34 +59,28 @@ function questionChange() {
 }
 
 //click submit
-
 function clickSubmit() {
-    $('.submit').on('click', function() {
-        event.preventDefault();
-        validateForm();
-        // if validateForm() {
-          // if answerCorrect() {
-            // progressQuestion()
-        //} else {}
-          //
-      //}
-    });
+  $('.submit').on('click', function() {
+      event.preventDefault();
+      validateForm();
+  });
+}
+//make sure one radio option is checked
+function validateForm() {
+  var checkFound = false;
+  for (var j = 0; j < 4; j++) {
+     if (radioButtons[j].checked == true) {
+        checkFound = true;
+        progressQuestion();
+        }
+     }
+  if (checkFound != true) {
+     alert ('Please check your answer.');
+     return;
+  }
 }
 
-function validateForm() {
-        var checkFound = false;
-        for (var j=0; j < 4; j++) {
-           if (radioButtons[j].checked == true) {
-              checkFound = true;
-              progressQuestion();
-              }
-           }
-        if (checkFound != true) {
-           alert ('Please check at least one checkbox.');
-           return;
-        }
-      }
-
+//screen with "next" option and display correct/incorrect
 function progressQuestion() {
   gradeAnswer();
   $('.question').hide();
@@ -101,62 +89,63 @@ function progressQuestion() {
   $('.explanation').show();
 }
 
-//click next
-
-function clickNext() {
-    $('.next').on('click', function() {
-        uncheckAll();
-        $('.next').hide();
-        $('.stats').show();
-        $('.question').show();
-        $('.next').hide();
-        $('.results').hide();
-        questionCount ++;
-        questionChange();
-        $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
-    });
+//score correct/incorrect
+function gradeAnswer() {
+  let userAnswer = $("input[name='selection']:checked").val();
+  let correctAnswers = Object.values(LIST[questionCount - 1]);
+  let correctAnswer = correctAnswers[2];
+  if (userAnswer === correctAnswer) {
+    totalScore ++;
+  }
+  return $('.score').text("Total Score: " + (0+totalScore));
 }
 
+//click next
+function clickNext() {
+  $('.next').on('click', function() {
+    uncheckAll();
+    $('.next').hide();
+    $('.stats').show();
+    $('.question').show();
+    $('.next').hide();
+    $('.results').hide();
+    questionCount ++;
+    questionChange();
+    $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
+  });
+}
+
+// uncheck all radio buttons to start next question
 function uncheckAll() {
-for (k=0;k<radioButtons.length;k++) {
+for (k = 0;k < radioButtons.length; k++) {
     if (radioButtons[k].type == 'radio') {
-    radioButtons[k].checked = false;
+      radioButtons[k].checked = false;
   }}
 }
 
+// restart page
 function finalPage() {
-    console.log('end');
-    $('.question').hide();
-    $('.restart').show();
-    //restart question counter
-    //restart score
+  $('.question').hide();
+  $('.stats').hide();
+  $('.restart').show();
 }
 
 //click restart
-
 function clickRestart() {
-    $('.restart').on('click', function() {
-            $('.next').hide();
-            $('.start').show();
-            $('.restart').hide();
-        });
-    }
-
-function scoreKeeper(totalScore) {
-    totalScore ++;
-    return totalScore;
+  $('.restart').on('click', function() {
+      $('.next').hide();
+      $('.start').show();
+      $('.restart').hide();
+      questionCount = 1;
+      totalScore = 0;
+      i = 0;
+  });
 }
 
 clickStart();
 clickSubmit();
 clickNext();
 clickRestart();
-scoreKeeper();
-
 
 // Still Needed //
-
-        // loop updating score
         // display image/result (based on correct/incorrect answer), explanation
-        // function determining if correct/incorrect
-        // function adding to score if correct
