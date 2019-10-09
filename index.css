@@ -12,12 +12,6 @@ h2, h3 {
   font-size: 4em;
 }
 
-body {
-  background:
-    url('https://images.unsplash.com/photo-1550376026-7375b92bb318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80')no-repeat center center fixed;
-  background-size: cover;
-}
-
 label, .explanation, .explanationSmall{
   font-size: 2.7em;
 }
@@ -25,6 +19,7 @@ label, .explanation, .explanationSmall{
 input[type=radio] {
     height: 3em;
     width: 3em;
+    border: black solid 2px;
 }
 
 .innerBox {
@@ -90,12 +85,11 @@ input[type=radio] {
 }
 
 .submit, .next {
-    margin: auto;
+    margin: 5% auto 5% auto;
     width: 75%;
     font-size: 3em;
     border: solid 1px black;
     background: rgba(245,245,246, 0.2);
-
 }
 
 .restart {
@@ -146,41 +140,25 @@ input[type=radio] {
   width: 10%;
 }
 
-/* Media Queries
+/* Media Queries */
 
-/* @media only screen and (max-width: 600px) {
-    .logo {
-
-    }
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url('https://images.unsplash.com/photo-1550376026-7375b92bb318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80') no-repeat center center fixed;
+    background-size: cover;
   }
+}
 
-@media only screen and (min-width: 600px) {
-    .logo {
-
-    }
-  }
-/*
- */
- @media screen and (min-device-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .stats {
       display: flex;
       flex-direction: row;
   };
 
   body {
-    background:
-      url('images/background.jpg');
+    background-image: url('images/background.jpg');
     background-size: cover;
   }
 }
-/* @media only screen and (min-width: 992px) {
-    body {
 
-    }
-  }
-
-@media only screen and (min-width: 1200px) {
-    body {
-
-    }
-  } */ */
+/* @media only screen and (min-width: 992px) {...} */
