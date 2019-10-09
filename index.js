@@ -5,31 +5,31 @@ let LIST = [
     question: 'What is a "Cria"?',
     answers: ['Baby Alpaca', 'Cream-Colored Alpaca', 'Specific Breed of Alpaca','An Alpaca Halter'],
     correctAnswer: 'Baby Alpaca',
-    explanation: 'Latin.'
+    explanation: 'Cria is pronounced /kriː.ə/'
   },
   {
-    question: 'What do you call the mating calls of the alpaca?',
+    question: "What's the alpaca mating call?",
     answers: ['Orgling', 'Gurgling', 'Yodling','Humming'],
     correctAnswer: 'Orgling',
-    explanation: 'Yep it is disgusting, too'
+    explanation: 'When the male alpaca begins orgling, it causes the female alpaca to ovulate'
   },
   {
-    question: 'How many toes do alpacas have on each foot?',
+    question: 'How many toes do alpacas have per foot?',
     answers: ['None - They are Hooves', '5 in Front, 4 in Back', '3 in Front, 2 in Back','2'],
     correctAnswer: '2',
-    explanation: 'Two - It is true!'
+    explanation: 'Each foot is made up of two toes which have a toenail and pad.'
   },
   {
     question: 'Which family do alpacas belong to?',
     answers: ['Camelidae', 'Carnivora', 'Mustelidae','Usidae'],
     correctAnswer: 'Camelidae',
-    explanation: 'They are directly related to camels'
+    explanation: 'Camelids are a group of even-toed ungulate mammals. There are six living species of camelids.'
   },
   {
-    question: 'Who originally domesticated alpacas roughly 6,000 years ago?',
+    question: 'Who domesticated alpacas roughly 6,000 years ago?',
     answers: ['Incas', 'Mayas', 'Tibetans','Native Hawaiians'],
     correctAnswer: 'Incas',
-    explanation: 'Peruvians are awesome'
+    explanation: 'The Incas in the Puna region of the Peruvian Andes'
   }
 ];
 let questionCount = 1;
@@ -106,6 +106,9 @@ function progressQuestion() {
   $('.results').show();
   let answerExplanations = Object.values(LIST[questionCount - 1]);
   let answerExplanation = answerExplanations[3];
+  let correctAnswers = Object.values(LIST[questionCount - 1]);
+  let correctAnswer = correctAnswers[2];
+  $('.explanationSmall').text("Answer was: " + correctAnswer);
   $('.explanation').text(answerExplanation);
   $('.explanation').show();
 }
@@ -118,11 +121,9 @@ function gradeAnswer() {
   if (userAnswer === correctAnswer) {
     totalScore ++;
     correctStatus = true;
-    $('.correct').show();
     $('.result').text("Correct!");
   } else {
     correctStatus = false;
-    $('.incorrect').show();
     $('.result').text("Incorrect!");
   }
   return $('.score').text("Total Score: " + (0+totalScore));
@@ -141,7 +142,7 @@ function clickNext() {
       $('.incorrect').hide();
     questionCount ++;
     questionChange();
-    $('.questionAnnouncement').text("Question: " + questionCount + "/10").show();
+    $('.questionAnnouncement').text("Question: " + questionCount + "/6").show();
   });
 }
 
@@ -165,6 +166,7 @@ function clickRestart() {
       $('.next').hide();
       $('.start').show();
       $('.restart').hide();
+      $('.stats').hide();
       questionCount = 1;
       totalScore = 0;
       i = 0;
