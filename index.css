@@ -1,11 +1,16 @@
 * {
     font-family: 'Architects Daughter';
-    background-color: lightgrey;
 }
 
 h1 {
     text-align: center;
 }
+
+body {
+  background-image: url('https://www.tokkoro.com/picsup/2639428-mountains-4k-windows-wallpaper-download.jpg');
+  background-size: cover;
+}
+
 
 .outerBox {
     width: 400px;
@@ -15,7 +20,7 @@ h1 {
     border-width: 2px;
     border-radius: 5px;
     margin: auto;
-    background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg');
+    /* background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg'); */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -29,7 +34,6 @@ h1 {
     margin: 5%;
     width: 350px;
     height: 250px;
-    background-color: lightgrey;
     display: flex;
     flex-direction: column;
 }
@@ -81,13 +85,13 @@ h1 {
 .submit {
     margin: 0 25%;
     font-size: 20px;
-    border: solid 1px green;
+    border: solid 1px black;
 }
 
 .restart {
     margin: auto;
     font-size: 18px;
-    border: solid 1px green;
+    border: solid 1px black;
     text-align: center;
     width: 75%;
     height: 50%;
@@ -108,7 +112,7 @@ h1 {
 .next {
     margin: 0 25%;
     font-size: 20px;
-    border: solid 1px green;
+    border: solid 1px black;
 }
 
 .logo {

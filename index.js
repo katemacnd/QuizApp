@@ -46,8 +46,8 @@ function clickStart() {
   $('.start').on('click', function() {
       $('.start').hide();
       $('.stats').html(`
-        <div class = 'score'></div>
-        <div class = 'questionAnnouncement hidden'></div>
+        <div class='score'></div>
+        <div class='questionAnnouncement hidden'></div>
       `);
       $('.stats').show();
       $('.question').show();
