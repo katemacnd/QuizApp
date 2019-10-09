@@ -1,42 +1,35 @@
 * {
     font-family: 'Architects Daughter';
+    color: whitesmoke;
 }
 
 h1 {
     text-align: center;
 }
 
-body {
-  background-image: url('https://www.tokkoro.com/picsup/2639428-mountains-4k-windows-wallpaper-download.jpg');
-  background-size: cover;
+h2, h3 {
+  margin: 10px;
 }
 
-
-.outerBox {
-    width: 400px;
-    height: 300px;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 2px;
-    border-radius: 5px;
-    margin: auto;
-    /* background-image: url('https://previews.123rf.com/images/ganpanjaneedesign/ganpanjaneedesign1807/ganpanjaneedesign180700015/110884612-green-grass-background-nature-texture.jpg'); */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+  background:
+    url('images/background.jpg');
 }
 
 .innerBox {
     border-style: solid;
-    border-color: gray;
-    border-width: 3px;
+    border-color: whitesmoke;
+    border-width: .5px;
     border-radius: 5px;
     align-items: center;
-    margin: 5%;
-    width: 350px;
-    height: 250px;
+    margin: auto;
+    width: 45%;
+    height: 30em;
     display: flex;
     flex-direction: column;
+    background: rgba(245,245,246, 0.2);
 }
+
 
 .answers{
     display: flex;
@@ -47,14 +40,14 @@ body {
     display: relative;
     border-color: solid;
     border-width: 2px;
-    border-color: lightgrey;
+    border-color: whitesmoke;
     text-align: center;
     font-size: 30px;
 }
 
 .correct {
     display: relative;
-    border: solid 2px lightgrey;
+    border: solid 2px whitesmoke;
     text-align: center;
     max-height: 150px;
 }
@@ -63,15 +56,21 @@ body {
     display: relative;
     border-color: solid;
     border-width: 2px;
-    border-color: lightgrey;
-    width: 350px;
-    height: 250px;
+    border-color: whitesmoke;
+    width: 100%;
+    height: 100%;
     font-size: 36px;
+    background: rgba(245,245,246, 0.2);
+}
+
+.displayQuestion {
+  margin: 10%;
 }
 
 .question {
     font-size: 18px;
     text-align: center;
+    margin: auto;
 }
 
 .options {
@@ -85,13 +84,16 @@ body {
 .submit {
     margin: 0 25%;
     font-size: 20px;
-    border: solid 1px black;
+    border: solid 1px whitesmoke;
+    background: rgba(245,245,246, 0.2);
+    margin: 25%;
+
 }
 
 .restart {
     margin: auto;
     font-size: 18px;
-    border: solid 1px black;
+    border: solid 1px whitesmoke;
     text-align: center;
     width: 75%;
     height: 50%;
@@ -102,6 +104,7 @@ body {
     flex-direction: row;
     width: 95%;
     justify-content: space-around;
+    font-size: 18px;
 }
 
 
@@ -112,7 +115,8 @@ body {
 .next {
     margin: 0 25%;
     font-size: 20px;
-    border: solid 1px black;
+    border: solid 1px whitesmoke;
+    background: rgba(245,245,246, 0.2);
 }
 
 .logo {
@@ -126,7 +130,9 @@ body {
     display: none;
 }
 
-
+.correct, .incorrect{
+  width: 10%;
+}
 
 /* Media Queries
 
