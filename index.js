@@ -14,12 +14,6 @@ let LIST = [
     explanation: 'When the male alpaca begins orgling, it causes the female alpaca to ovulate'
   },
   {
-    question: 'How many toes do alpacas have per foot?',
-    answers: ['None - They are Hooves', '5 in Front, 4 in Back', '3 in Front, 2 in Back','2'],
-    correctAnswer: '2',
-    explanation: 'Each foot is made up of two toes which have a toenail and pad.'
-  },
-  {
     question: 'Which family do alpacas belong to?',
     answers: ['Camelidae', 'Carnivora', 'Mustelidae','Usidae'],
     correctAnswer: 'Camelidae',
@@ -51,17 +45,20 @@ function clickStart() {
       `);
       $('.stats').show();
       $('.question').show();
+      $('.submit').show();
       questionChange();
-      $('.questionAnnouncement').text("Question: " + questionCount + "/6").show();
+      $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
+      $('.totalScore').show();
+      $('.score').text("Total Score: 0").show();
   });
 }
 
 function questionChange() {
   if (i < Object.values(LIST).length) {
     let questionText = Object.values(LIST[i]);
-    $('.displayQuestion').text(questionText[0]);
     let questionAllAnswers = Object.values(LIST[i]);
     let questionAnswers = questionAllAnswers[1];
+    $('.displayQuestion').text(questionText[0]);
     $('#label0').text(questionAnswers[0]);
     $('#label1').text(questionAnswers[1]);
     $('#label2').text(questionAnswers[2]);
@@ -100,14 +97,15 @@ function validateForm() {
 
 //screen with "next" option and display correct/incorrect
 function progressQuestion() {
-  gradeAnswer();
-  $('.question').hide();
-  $('.next').show();
-  $('.results').show();
   let answerExplanations = Object.values(LIST[questionCount - 1]);
   let answerExplanation = answerExplanations[3];
   let correctAnswers = Object.values(LIST[questionCount - 1]);
   let correctAnswer = correctAnswers[2];
+  gradeAnswer();
+  $('.question').hide();
+  $('.submit').hide();
+  $('.next').show();
+  $('.results').show();
   $('.explanationSmall').text("Answer was: " + correctAnswer);
   $('.explanation').text(answerExplanation);
   $('.explanation').show();
@@ -136,13 +134,14 @@ function clickNext() {
     $('.next').hide();
     $('.stats').show();
     $('.question').show();
+    $('.submit').show();
     $('.next').hide();
     $('.results').hide();
       $('.correct').hide();
       $('.incorrect').hide();
     questionCount ++;
     questionChange();
-    $('.questionAnnouncement').text("Question: " + questionCount + "/6").show();
+    $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
   });
 }
 
@@ -158,6 +157,7 @@ for (k = 0;k < radioButtons.length; k++) {
 function finalPage() {
   $('.question').hide();
   $('.restart').show();
+  $('.submit').hide();
 }
 
 //click restart
