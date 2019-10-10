@@ -45,10 +45,9 @@ function clickStart() {
       `).show();
       $('.question').show();
       $('.submit').show();
-      questionChange();
       $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
-      $('.totalScore').show();
       $('.score').text("Total Score: 0").show();
+      questionChange();
   });
 }
 
@@ -79,6 +78,7 @@ function clickSubmit() {
       validateForm();
   });
 }
+
 //make sure one radio option is checked
 function validateForm() {
   var checkFound = false;
@@ -130,13 +130,10 @@ function gradeAnswer() {
 function clickNext() {
   $('.next').on('click', function() {
     uncheckAll();
-    $('.next').hide();
     $('#quiz').show();
     $('.submit').show();
     $('.next').hide();
     $('.results').hide();
-      $('.correct').hide();
-      $('.incorrect').hide();
     questionCount ++;
     questionChange();
     $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
@@ -162,7 +159,6 @@ function finalPage() {
 //click restart
 function clickRestart() {
   $('.restart').on('click', function() {
-      $('.next').hide();
       $('.start').show();
       $('.restart').hide();
       $('.stats').hide();

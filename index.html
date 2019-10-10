@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Alpaca Quiz App</title>
+        <title>Alpaca Facts Animal Quiz</title>
         <link href="index.css" rel="stylesheet" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <link href="https://fonts.googleapis.com/css?family=Architects Daughter" rel="stylesheet">
     <body>
+        <body background="https://images.unsplash.com/photo-1550376026-7375b92bb318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="craft room">
+        <h1>Alpaca Facts Animal Quiz</h1>
         <div class="box">
             <button class="start">Start</button>
             <div class="question hidden">
                 <div id="quiz">
-                    <div class=displayQuestion></div>
+                    <h2 class=displayQuestion></h2>
                     <form class="buttons">
                         <div class="allButtons">
                             <input id="btn0" type="radio" name="selection"></input>
@@ -31,7 +33,6 @@
                         </div>
                     </form>
                 </div>
-                <div class="stats"></div>
             </div>
             <div class="results hidden"><br>
                 <div class="result"></div><br>
@@ -41,6 +42,7 @@
             <button class="submit hidden" type="button">Submit</button>
             <button class="next hidden" type="button">Next</button>
             <button class="restart hidden" type="button">Restart</button>
+            <div class="stats"></div>
         </div>
         <!-- </div> -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

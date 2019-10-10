@@ -3,14 +3,23 @@
 }
 
 h1 {
-    text-align: center;
+    display: flex;
+    position: relative;
+    margin: 0 auto 0 auto;
+    top: 30px;
+    justify-content: center;
+    font-size: 1.5em;
+    background: rgba(245,245,246, 0.8);
+    border-style: solid whitesmoke;
+    border-width: .5px;
+    border-radius: 5px;
 }
 
 
 label, .explanation, .explanationSmall{
-  font-size: 1em;
-  margin-left: 10px;
-  margin-right: 10px;
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 input[type=radio] {
@@ -20,8 +29,7 @@ input[type=radio] {
 }
 
 .box {
-    border-style: solid;
-    border-color: whitesmoke;
+    border-style: solid whitesmoke;
     border-width: .5px;
     border-radius: 5px;
     align-items: center;
@@ -44,13 +52,13 @@ input[type=radio] {
 }
 
 .displayQuestion {
-  font-size: 1.3em;
-  margin: 5%;
+    font-size: 1.3em;
+    margin: 5%;
 }
 
 .result {
-  font-size: 1.75em;
-  margin: 5%;
+    font-size: 1.75em;
+    margin: 5%;
 }
 
 .start {
@@ -58,23 +66,19 @@ input[type=radio] {
     height: 100%;
     font-size: 3em;
     background: none;
+    border-style: solid whitesmoke;
+    border-width: .5px;
+    border-radius: 5px;
 }
-
-/* .question {
-    font-size: 1em;
-    text-align: center;
-    margin: auto;
-} */
 
 .question {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 300px;
-  text-align: center;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+    text-align: center;
+    margin: auto;
 }
-
 
 .options {
     margin-left: 5%;
@@ -83,19 +87,16 @@ input[type=radio] {
 .buttons {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .submit, .next {
     margin: 5% auto 5% auto;
     width: 75%;
     font-size: 1em;
-    border: solid 1px whitesmoke;
+    border: solid 1.5px black;
+    border-radius: 5px;
     background: rgba(245,245,246, 0.1)
-}
-
-.next {
-    position: relative;
-    top: 100px;
 }
 
 .restart {
@@ -105,6 +106,7 @@ input[type=radio] {
     width: 75%;
     height: 50%;
     background: none;
+    border-radius: 5px;
 }
 
 .stats {
@@ -113,27 +115,14 @@ input[type=radio] {
     width: 95%;
     align-content: flex-start;
     font-size: 1em;
-    align-self: flex-end;
 }
 
 .stats div {
   margin: auto;
 }
 
-
-.logo {
-    position: absolute;
-    bottom: 0px;
-    right: 10px;
-    width: 15%;
-}
-
 .hidden {
     display: none;
-}
-
-.correct, .incorrect{
-  width: 10%;
 }
 
 /* Media Queries */
@@ -144,11 +133,6 @@ input[type=radio] {
     color: black;
   }
 
-  body {
-    background-image: url('https://images.unsplash.com/photo-1550376026-7375b92bb318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80');
-    background-height: 100%;
-  }
-
   h2, h3 {
     font-size: 1.5em;
   }
@@ -157,6 +141,23 @@ input[type=radio] {
 
   * {
     color: whitesmoke;
+  }
+
+  body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+  }
+
+  h1 {
+      display: flex;
+      position: relative;
+      margin: 0 auto 0 auto;
+      top: 260px;
+      justify-content: center;
+  }
+
+  h2, h3 {
+    font-size: 3em;
   }
 
   .box {
@@ -170,15 +171,6 @@ input[type=radio] {
   .stats {
       display: flex;
       flex-direction: row;
-  }
-
-  body {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-  }
-
-  h2, h3 {
-    font-size: 3em;
   }
 
   .displayQuestion {
