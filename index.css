@@ -29,7 +29,7 @@ input[type=radio] {
     align-items: center;
     margin: 50% auto 50% auto;
     width: 65%;
-    height: 800px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,7 +60,7 @@ input[type=radio] {
     border-color: whitesmoke;
     width: 100%;
     height: 100%;
-    font-size: 6em;
+    font-size: 3em;
     background: rgba(245,245,246, 0.2);
 }
 
