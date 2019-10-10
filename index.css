@@ -13,8 +13,8 @@ h1 {
     border-style: solid whitesmoke;
     border-width: .5px;
     border-radius: 5px;
+    width: auto;
 }
-
 
 label, .explanation, .explanationSmall{
     font-size: 1.2em;
@@ -66,7 +66,6 @@ input[type=radio] {
     height: 100%;
     font-size: 3em;
     background: none;
-    border-style: solid whitesmoke;
     border-width: .5px;
     border-radius: 5px;
 }
@@ -152,12 +151,19 @@ input[type=radio] {
       display: flex;
       position: relative;
       margin: 0 auto 0 auto;
-      top: 260px;
+      top: 250px;
       justify-content: center;
+      font-size: 1.75em;
+      background: rgba(245,245,246, 0.1);
+      border-color: whitesmoke;
+      border-width: .5px;
+      border-radius: 5px;
+      width: 65%;
+      max-width: 450px;
   }
 
   h2, h3 {
-    font-size: 3em;
+      font-size: 3em;
   }
 
   .box {
@@ -171,6 +177,7 @@ input[type=radio] {
   .stats {
       display: flex;
       flex-direction: row;
+      margin-bottom: 10px;
   }
 
   .displayQuestion {
