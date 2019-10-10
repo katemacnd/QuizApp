@@ -6,18 +6,14 @@ h1 {
     text-align: center;
 }
 
-h2, h3 {
-  margin: 1em;
-  font-size: 4em;
-}
 
 label, .explanation, .explanationSmall{
-  font-size: 2.7em;
+  font-size: 1em;
 }
 
 input[type=radio] {
-    height: 3em;
-    width: 3em;
+    height: 1em;
+    width: 1em;
     border: black solid 2px;
 }
 
@@ -29,7 +25,7 @@ input[type=radio] {
     align-items: center;
     margin: 50% auto 50% auto;
     width: 65%;
-    height: 300px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,18 +42,15 @@ input[type=radio] {
     text-align: center;
 }
 
-.correct {
+/* .correct {
     display: relative;
     border: solid 2px whitesmoke;
     text-align: center;
     max-height: 150px;
-}
+} */
 
 .start {
     display: relative;
-    border-color: solid;
-    border-width: 2px;
-    border-color: whitesmoke;
     width: 100%;
     height: 100%;
     font-size: 3em;
@@ -86,15 +79,14 @@ input[type=radio] {
 .submit, .next {
     margin: 5% auto 5% auto;
     width: 75%;
-    font-size: 3em;
+    font-size: 1em;
     border: solid 1px black;
     background: rgba(245,245,246, 0.2);
 }
 
 .restart {
     margin: auto;
-    font-size: 3em;
-    border: solid 1px whitesmoke;
+    font-size: 2em;
     text-align: center;
     width: 75%;
     height: 50%;
@@ -106,7 +98,7 @@ input[type=radio] {
     flex-direction: column-reverse;
     width: 95%;
     align-content: flex-start;
-    font-size: 2.25em;
+    font-size: 1em;
 }
 
 .stats div {
@@ -151,8 +143,12 @@ input[type=radio] {
     background-image: url('https://images.unsplash.com/photo-1550376026-7375b92bb318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80');
     background-size: cover;
   }
-}
 
+  h2, h3 {
+    margin: 1em;
+    font-size: 1.5em;
+  }
+}
 @media only screen and (min-width: 768px) {
 
   * {
@@ -167,6 +163,11 @@ input[type=radio] {
   body {
     background-image: url('images/background.jpg');
     background-size: cover;
+  }
+
+  h2, h3 {
+    margin: 1em;
+    font-size: 3em;
   }
 }
 

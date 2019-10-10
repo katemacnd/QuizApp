@@ -26,7 +26,7 @@ let LIST = [
     explanation: 'Camelids are a group of even-toed ungulate mammals. There are six living species of camelids.'
   },
   {
-    question: 'Who domesticated alpacas roughly 6,000 years ago?',
+    question: 'Who domesticated alpacas ~6,000 years ago?',
     answers: ['Incas', 'Mayas', 'Tibetans','Native Hawaiians'],
     correctAnswer: 'Incas',
     explanation: 'The Incas in the Puna region of the Peruvian Andes'
