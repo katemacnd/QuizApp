@@ -57,19 +57,22 @@ input[type=radio] {
     width: 100%;
     height: 100%;
     font-size: 3em;
+    background: none;
 }
 
-.question {
+/* .question {
     font-size: 1em;
     text-align: center;
     margin: auto;
-}
+} */
 
-#quiz {
+.question {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 300px;
+  text-align: center;
+  margin: auto;
 }
 
 
@@ -87,7 +90,7 @@ input[type=radio] {
     width: 75%;
     font-size: 1em;
     border: solid 1px whitesmoke;
-    background: rgba(245,245,246, 0.2)
+    background: rgba(245,245,246, 0.1)
 }
 
 .next {
@@ -106,7 +109,7 @@ input[type=radio] {
 
 .stats {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 95%;
     align-content: flex-start;
     font-size: 1em;

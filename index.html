@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Alpaca Quiz App</title>
         <link href="index.css" rel="stylesheet" type="text/css" />
@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Architects Daughter" rel="stylesheet">
     <body>
         <div class="box">
-            <button class="start">START</button>
-            <form class="question hidden">
+            <button class="start">Start</button>
+            <div class="question hidden">
                 <div id="quiz">
                     <div class=displayQuestion></div>
-                    <div class="buttons">
+                    <form class="buttons">
                         <div class="allButtons">
                             <input id="btn0" type="radio" name="selection"></input>
                             <label id="label0"></label>
@@ -29,10 +29,10 @@
                             <input id="btn3" type="radio" name="selection"></input>
                             <label id="label3"></label>
                         </div>
-                    </div>
-                    <div class="stats"></div>
+                    </form>
                 </div>
-            </form>
+                <div class="stats"></div>
+            </div>
             <div class="results hidden"><br>
                 <div class="result"></div><br>
                 <div class="explanationSmall"></div><br>
@@ -40,7 +40,7 @@
             </div>
             <button class="submit hidden" type="button">Submit</button>
             <button class="next hidden" type="button">Next</button>
-            <button class="restart hidden" type="button">RESTART</button>
+            <button class="restart hidden" type="button">Restart</button>
         </div>
         <!-- </div> -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

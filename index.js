@@ -41,9 +41,8 @@ function clickStart() {
       $('.start').hide();
       $('.stats').html(`
         <div class='score'></div>
-        <div class='questionAnnouncement hidden'></div>
-      `);
-      $('.stats').show();
+        <div class='questionAnnouncement'></div>
+      `).show();
       $('.question').show();
       $('.submit').show();
       questionChange();
@@ -102,7 +101,7 @@ function progressQuestion() {
   let correctAnswers = Object.values(LIST[questionCount - 1]);
   let correctAnswer = correctAnswers[2];
   gradeAnswer();
-  $('.question').hide();
+  $('#quiz').hide();
   $('.submit').hide();
   $('.next').show();
   $('.results').show();
@@ -132,8 +131,7 @@ function clickNext() {
   $('.next').on('click', function() {
     uncheckAll();
     $('.next').hide();
-    $('.stats').show();
-    $('.question').show();
+    $('#quiz').show();
     $('.submit').show();
     $('.next').hide();
     $('.results').hide();
@@ -155,9 +153,10 @@ for (k = 0;k < radioButtons.length; k++) {
 
 // restart page
 function finalPage() {
-  $('.question').hide();
+  $('#quiz').hide();
   $('.restart').show();
   $('.submit').hide();
+  $('.stats').hide();
 }
 
 //click restart
