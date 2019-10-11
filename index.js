@@ -43,6 +43,7 @@ function clickStart() {
         <div class='score'></div>
         <div class='questionAnnouncement'></div>
       `).show();
+      $('#quiz').show();
       $('.question').show();
       $('.submit').show();
       $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
@@ -150,9 +151,13 @@ for (k = 0;k < radioButtons.length; k++) {
 
 // restart page
 function finalPage() {
+  let percentScore = (totalScore/4)*100;
+  $('.percentScore').text(`You got ` + totalScore + `/4, which is ` + percentScore + `%!`);
+  console.log(percentScore);
   $('#quiz').hide();
   $('.restart').show();
   $('.submit').hide();
+  $('.percentScore').show();
   $('.stats').hide();
 }
 
@@ -161,14 +166,18 @@ function clickRestart() {
   $('.restart').on('click', function() {
       $('.start').show();
       $('.restart').hide();
-      $('.stats').hide();
+      $('.percentScore').hide();
       questionCount = 1;
       totalScore = 0;
       i = 0;
   });
 }
 
-clickStart();
-clickSubmit();
-clickNext();
-clickRestart();
+function handleClicks() {
+  clickStart();
+  clickSubmit();
+  clickNext();
+  clickRestart();
+}
+
+handleClicks();

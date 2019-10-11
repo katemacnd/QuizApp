@@ -17,7 +17,7 @@ h1 {
 }
 
 label, .explanation, .explanationSmall{
-    font-size: 1.2em;
+    font-size: 1em;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -40,6 +40,18 @@ input[type=radio] {
     display: flex;
     flex-direction: column;
     background: rgba(245,245,246, 0.8);
+}
+
+.allButtons {
+
+}
+
+.percentScore {
+  position: relative;
+  bottom: 80px;
+  font-size: 2em;
+  width: auto;
+  text-align: center;
 }
 
 .answers{
@@ -66,8 +78,6 @@ input[type=radio] {
     height: 100%;
     font-size: 3em;
     background: none;
-    border-width: .5px;
-    border-radius: 5px;
 }
 
 .question {
@@ -89,7 +99,7 @@ input[type=radio] {
     align-items: flex-start;
 }
 
-.submit, .next {
+.submit, .next, .restart {
     margin: 5% auto 5% auto;
     width: 75%;
     font-size: 1em;
@@ -98,14 +108,8 @@ input[type=radio] {
     background: rgba(245,245,246, 0.1)
 }
 
-.restart {
-    margin: auto;
-    font-size: 2em;
-    text-align: center;
-    width: 75%;
-    height: 50%;
-    background: none;
-    border-radius: 5px;
+.percentScore {
+
 }
 
 .stats {
@@ -135,7 +139,10 @@ input[type=radio] {
   h2, h3 {
     font-size: 1.5em;
   }
+
+
 }
+
 @media only screen and (min-width: 700px) {
 
   * {
@@ -153,7 +160,7 @@ input[type=radio] {
       margin: 0 auto 0 auto;
       top: 250px;
       justify-content: center;
-      font-size: 1.75em;
+      font-size: 1.95em;
       background: rgba(245,245,246, 0.1);
       border-color: whitesmoke;
       border-width: .5px;
@@ -163,7 +170,7 @@ input[type=radio] {
   }
 
   h2, h3 {
-      font-size: 3em;
+      font-size: 2.5em;
   }
 
   .box {
@@ -182,6 +189,10 @@ input[type=radio] {
 
   .displayQuestion {
     font-size: 2.3em;
+  }
+
+  .submit, .next, .restart {
+      border: solid 1.5px whitesmoke;
   }
 
   .result {
