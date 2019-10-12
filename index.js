@@ -172,4 +172,4 @@ function handleClicks() {
   clickRestart();
 }
 
-handleClicks();
+$(handleClicks);
