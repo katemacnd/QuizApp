@@ -9,7 +9,7 @@ let LIST = [
   },
   {
     question: 'Which family do alpacas belong to?',
-    answers: ['Camelidae', 'Carnivora', 'Mustelidae','Usidae'],
+    answers: ['Mustelidae', 'Carnivora', 'Camelidae','Usidae'],
     correctAnswer: 'Camelidae',
     explanation: 'Camelids are a group of even-toed ungulate mammals. There are six living species of camelids.'
   },
@@ -143,8 +143,8 @@ for (k = 0;k < radioButtons.length; k++) {
 
 // restart page
 function finalPage() {
-  let percentScore = (totalScore/4)*100;
-  $('.percentScore').text(`You got ` + totalScore + `/4, which is ` + percentScore + `%!`);
+  let percentScore = (totalScore/5)*100;
+  $('.percentScore').text(`You got ` + totalScore + `/5, which is ` + percentScore + `%!`);
   $('#quiz').hide();
   $('.restart').show();
   $('.submit').hide();
@@ -155,6 +155,7 @@ function finalPage() {
 //click restart
 function clickRestart() {
   $('.restart').on('click', function() {
+      $('.question').hide();
       $('.start').show();
       $('.restart').hide();
       $('.percentScore').hide();

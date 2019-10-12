@@ -14,7 +14,8 @@ h1 {
     border-width: .5px;
     border-radius: 5px;
     width: auto;
-    align-self: center;
+    max-width: 260px;
+    text-align: center;
 }
 
 .explanation, .explanationSmall{
@@ -94,6 +95,8 @@ input[type=radio] {
     font-size: 3em;
     background: none;
     border: none;
+    position: flex;
+    align-items: center;
 }
 
 .question {
@@ -160,8 +163,6 @@ input[type=radio] {
   h2, h3 {
     font-size: 1.5em;
   }
-
-
 }
 
 @media only screen and (min-width: 426px) {
@@ -179,7 +180,7 @@ input[type=radio] {
       display: flex;
       position: relative;
       margin: 0 auto 0 auto;
-      top: 150px;
+      top: 70px;
       justify-content: center;
       font-size: 1.95em;
       background: rgba(245,245,246, 0.1);
@@ -191,7 +192,7 @@ input[type=radio] {
   }
 
   h2, h3 {
-      font-size: 2.5em;
+      font-size: 2em;
   }
 
   .displayQuestionHeader {
@@ -221,7 +222,7 @@ input[type=radio] {
   }
 
   .displayQuestion {
-    font-size: 1.8em;
+    font-size: 1.3em;
   }
 
   .submit, .next, .restart {
@@ -244,6 +245,18 @@ input[type=radio] {
     bottom: 100px;
   }
 
+  }
+
+@media only screen and (min-width: 769px) {
+
+h1 {
+  top: 150px;
 }
 
-/* @media only screen and (min-width: 992px) {...} */
+h2, h3 {
+    font-size: 2.5em;
+}
+
+.displayQuestion {
+  font-size: 1.5em;
+}
