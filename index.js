@@ -3,15 +3,9 @@
 let LIST = [
   {
     question: 'What is a "Cria"?',
-    answers: ['Baby Alpaca', 'Cream-Colored Alpaca', 'Specific Breed of Alpaca','An Alpaca Halter'],
+    answers: ['Baby Alpaca', 'Cream-Tone Alpaca', 'Breed of Alpaca','Alpaca Halter'],
     correctAnswer: 'Baby Alpaca',
     explanation: 'Cria is pronounced /kriː.ə/'
-  },
-  {
-    question: "What's the alpaca mating call?",
-    answers: ['Orgling', 'Gurgling', 'Yodling','Humming'],
-    correctAnswer: 'Orgling',
-    explanation: 'When the male alpaca begins orgling, it causes the female alpaca to ovulate'
   },
   {
     question: 'Which family do alpacas belong to?',
@@ -20,10 +14,22 @@ let LIST = [
     explanation: 'Camelids are a group of even-toed ungulate mammals. There are six living species of camelids.'
   },
   {
-    question: 'Who domesticated alpacas ~6,000 years ago?',
+    question: 'Who domesticated alpacas?',
     answers: ['Incas', 'Mayas', 'Tibetans','Native Hawaiians'],
     correctAnswer: 'Incas',
-    explanation: 'The Incas in the Puna region of the Peruvian Andes'
+    explanation: 'The Incas in the Puna region of the Peruvian Andes roughly 6,000 years ago.'
+  },
+  {
+    question: 'Which is true of Alpaca Fiber?',
+    answers: ['Water Resistant', 'Flame Resistant', 'Hypoallergenic','All of the Above'],
+    correctAnswer: 'All of the Above',
+    explanation: 'Alpacas are sheered once per year to collect this valuable fiber.'
+  },
+  {
+    question: 'What is their Diet?',
+    answers: ['Carnivore', 'Herbivore', 'Omnivore','Insectivore'],
+    correctAnswer: 'Herbivore',
+    explanation: 'They eat hay, grain, grasses, and other leafy plants.'
   }
 ];
 let questionCount = 1;
@@ -46,7 +52,7 @@ function clickStart() {
       $('#quiz').show();
       $('.question').show();
       $('.submit').show();
-      $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
+      $('.questionAnnouncement').text("Question: " + questionCount + "/5").show();
       $('.score').text("Total Score: 0").show();
       questionChange();
   });
@@ -63,6 +69,7 @@ function questionChange() {
     $('#label2').text(questionAnswers[2]);
     $('#label3').text(questionAnswers[3]);
     $('#btn0').val(questionAnswers[0]);
+    $('#btn0').prop('checked', true);
     $('#btn1').val(questionAnswers[1]);
     $('#btn2').val(questionAnswers[2]);
     $('#btn3').val(questionAnswers[3]);
@@ -76,23 +83,8 @@ function questionChange() {
 function clickSubmit() {
   $('.submit').on('click', function() {
       event.preventDefault();
-      validateForm();
+      progressQuestion();
   });
-}
-
-//make sure one radio option is checked
-function validateForm() {
-  var checkFound = false;
-  for (var j = 0; j < 4; j++) {
-     if (radioButtons[j].checked == true) {
-        checkFound = true;
-        progressQuestion();
-        }
-     }
-  if (checkFound != true) {
-     alert ('Please check your answer.');
-     return;
-  }
 }
 
 //screen with "next" option and display correct/incorrect
@@ -137,7 +129,7 @@ function clickNext() {
     $('.results').hide();
     questionCount ++;
     questionChange();
-    $('.questionAnnouncement').text("Question: " + questionCount + "/4").show();
+    $('.questionAnnouncement').text("Question: " + questionCount + "/5").show();
   });
 }
 
@@ -153,7 +145,6 @@ for (k = 0;k < radioButtons.length; k++) {
 function finalPage() {
   let percentScore = (totalScore/4)*100;
   $('.percentScore').text(`You got ` + totalScore + `/4, which is ` + percentScore + `%!`);
-  console.log(percentScore);
   $('#quiz').hide();
   $('.restart').show();
   $('.submit').hide();

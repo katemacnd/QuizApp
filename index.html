@@ -8,31 +8,37 @@
     <link href="https://fonts.googleapis.com/css?family=Architects Daughter" rel="stylesheet">
     <body>
         <body background="https://images.unsplash.com/photo-1550376026-7375b92bb318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="craft room">
-        <h1>Alpaca Facts Animal Quiz</h1>
-        <div class="box">
+        <h1 id="title">Alpaca Facts Animal Quiz</h1>
+        <div class="box" id="main">
             <button class="start">Start</button>
             <div class="question hidden">
-                <div id="quiz">
-                    <h2 class=displayQuestion></h2>
-                    <form class="buttons">
-                        <div class="allButtons">
-                            <input id="btn0" type="radio" name="selection"></input>
-                            <label id="label0"></label>
-                        </div>
-                        <div class="allButtons">
-                            <input id="btn1" type="radio" name="selection"></input>
-                            <label id="label1"></label>
-                        </div>
-                        <div class="allButtons">
-                            <input id="btn2" type="radio" name="selection"></input>
-                            <label id="label2"></label>
-                        </div>
-                        <div class="allButtons">
-                            <input id="btn3" type="radio" name="selection"></input>
-                            <label id="label3"></label>
-                        </div>
-                    </form>
-                </div>
+                <section id="quiz">
+                    <div class=displayQuestionHeader>
+                      <header>
+                        <h2 class=displayQuestion></h2>
+                      <header>
+                    </div>
+                    <div class="displayQuestionForm">
+                      <form class="buttons">
+                          <div class="allButtons">
+                              <input id="btn0" type="radio" name="selection"></input>
+                              <label id="label0"></label>
+                          </div>
+                          <div class="allButtons">
+                              <input id="btn1" type="radio" name="selection"></input>
+                              <label id="label1"></label>
+                          </div>
+                          <div class="allButtons">
+                              <input id="btn2" type="radio" name="selection"></input>
+                              <label id="label2"></label>
+                          </div>
+                          <div class="allButtons">
+                              <input id="btn3" type="radio" name="selection"></input>
+                              <label id="label3"></label>
+                          </div>
+                      </div>
+                      </form>
+                </section>
             </div>
             <div class="results hidden"><br>
                 <div class="result"></div><br>
