@@ -40,7 +40,6 @@ let correctAnswer = correctAnswers[2];
 let totalScore = 0;
 let correctStatus = false;
 
-//clicking start
 
 function clickStart() {
   $('.start').on('click', function() {
@@ -79,7 +78,6 @@ function questionChange() {
   }
 }
 
-//click submit
 function clickSubmit() {
   $('.submit').on('click', function() {
       event.preventDefault();
@@ -87,7 +85,6 @@ function clickSubmit() {
   });
 }
 
-//screen with "next" option and display correct/incorrect
 function progressQuestion() {
   let answerExplanations = Object.values(LIST[questionCount - 1]);
   let answerExplanation = answerExplanations[3];
@@ -103,7 +100,6 @@ function progressQuestion() {
   $('.explanation').show();
 }
 
-//score correct/incorrect
 function gradeAnswer() {
   let userAnswer = $("input[name='selection']:checked").val();
   let correctAnswers = Object.values(LIST[questionCount - 1]);
@@ -119,7 +115,6 @@ function gradeAnswer() {
   return $('.score').text("Total Score: " + (0+totalScore));
 }
 
-//click next
 function clickNext() {
   $('.next').on('click', function() {
     uncheckAll();
@@ -133,7 +128,6 @@ function clickNext() {
   });
 }
 
-// uncheck all radio buttons to start next question
 function uncheckAll() {
 for (k = 0;k < radioButtons.length; k++) {
     if (radioButtons[k].type == 'radio') {
@@ -141,7 +135,6 @@ for (k = 0;k < radioButtons.length; k++) {
   }}
 }
 
-// restart page
 function finalPage() {
   let percentScore = (totalScore/5)*100;
   $('.percentScore').text(`You got ` + totalScore + `/5, which is ` + percentScore + `%!`);
@@ -152,7 +145,6 @@ function finalPage() {
   $('.stats').hide();
 }
 
-//click restart
 function clickRestart() {
   $('.restart').on('click', function() {
       $('.question').hide();
